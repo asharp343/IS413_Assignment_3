@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Thank You!";
+    ViewBag.Header = Model.Title + " was successfully added";
+}
+
+@model IS413_Assignment_3.Models.MovieInfo
+
+<div>
+    <a asp-controller="Home" asp-action="AddMovie">Add Another Movie</a>
+</div>
+
+<div>
+    <a asp-controller="Home" asp-action="MovieList">View Movie List</a>
+</div>

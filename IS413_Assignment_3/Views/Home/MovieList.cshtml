@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Movie List";
+    ViewBag.Header = "Movie List";
+}
+
+@model IEnumerable<IS413_Assignment_3.Models.MovieInfo>
+
+<div >
+    <table class="movieList">
+        <thead>
+            <tr><th>Category</th><th>Title</th><th>Year</th><th>Director</th><th>Rating</th><th>Edited</th><th>Lent To</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+            @foreach (IS413_Assignment_3.Models.MovieInfo info in Model)
+            {
+                <tr>
+                    <td>@info.Category</td>
+                    <td>@info.Title</td>
+                    <td>@info.Year</td>
+                    <td>@info.Director</td>
+                    <td>@info.Rating</td>
+                    <td>@info.Edited</td>
+                    <td>@info.LentTo</td>
+                    <td>@info.Notes</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

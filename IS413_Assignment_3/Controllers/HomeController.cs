@@ -28,6 +28,33 @@ namespace IS413_Assignment_3.Controllers
             return View();
         }
 
+        public IActionResult MyPodcast()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult AddMovie()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddMovie(MovieInfo Movie)
+        {
+            if (ModelState.IsValid)
+            {
+                TempStorage.AddMovie(Movie);
+                return View("Confirmation", Movie);
+            }
+            return View();
+        }
+
+        public IActionResult MovieList()
+        {
+            return View(TempStorage.Movies.Where(r => r.Title != "Independence Day"));
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
